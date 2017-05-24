@@ -20,7 +20,7 @@ echo "</table>"
 echo "<hr>"
 
 NCPU=$(lscpu | grep ^CPU\(s\) | awk '{print $2}')
-CRIT=$(echo "$NCPU*2" | bc)
+CRIT=$(echo "$NCPU" | bc)
 LAVG1=`cut -f1 -d" " /proc/loadavg`
 LAVG5=`cut -f2 -d" " /proc/loadavg`
 LAVG15=`cut -f3 -d" " /proc/loadavg`

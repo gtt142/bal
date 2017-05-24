@@ -68,7 +68,7 @@ echo "$(cat /var/log/iostat.log | tail -n 9 | head -n 3 |awk ' {printf("<tr><td 
 echo "<h1>Disk and Inodes info</h1>"
 echo "<table width=50% border=1>"
 echo "<tr><th>File system</th><th>%Free space</th><th>Free space</th><th>%Free inodes</th><th>Free inodes</th></tr>" 
-echo "$(cat /var/log/df.log | grep -v /dev* |grep -v /proc* |grep -v /sys* | awk ' NR>1 {printf("<tr><td align=center>%s</td><td align=center> %s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>",$1,(100-$2),$3,(100-$4),$5)}')"
+echo "$(cat /var/log/df.log | awk ' NR>1 {printf("<tr><td align=center>%s</td><td align=center> %s</td><td align=center>%s</td><td align=center>%s</td><td align=center>%s</td></tr>",$1,(100-$2),$3,(100-$4),$5)}')"
 echo "</table>"
 echo "<hr>"
 

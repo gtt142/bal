@@ -19,3 +19,4 @@ sudo service apache2 restart
 sudo touch /var/log/mpstat.log  /var/log/iostat.log  /var/log/tcp.log /var/log/udp.log /var/log/df.log /var/log/network.log
 sudo crontab cron.bak
 sudo service nginx restart
+

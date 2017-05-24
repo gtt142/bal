@@ -18,6 +18,7 @@ echo "<td align='center'>$HTTP_X_FORWARDER_FOR_PORT </td>"
 echo "<td align='center'>$HTTP_X_NGX_VERSION </td></tr>"
 echo "</table>"
 echo "<hr>"
+
 NCPU=$(lscpu | grep ^CPU\(s\) | awk '{print $2}')
 CRIT=$(echo "$NCPU*2" | bc)
 LAVG1=`cut -f1 -d" " /proc/loadavg`
